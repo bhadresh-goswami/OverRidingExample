@@ -8,8 +8,33 @@
 
 #include <iostream>
 
+class ParentClass {
+    
+    
+public:
+    
+    virtual void print()
+    {
+        std::cout<<"\n\n\tPrint called from PARENTCLASS!\n";
+    }
+};
+
+class ChildClass:public ParentClass {
+    
+    
+public:
+    virtual void print()
+    {
+        std::cout<<"\n\n\tPrint called from CHILDCLASS!\n";
+    }
+};
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+  
+    
+    ChildClass obj;
+    obj.print();
+    obj.ParentClass::print();
+    
     return 0;
 }
